@@ -1,0 +1,19 @@
+
+a = [2, 3, 4, 10, 40];
+
+function bf(l,h,key){
+	if(l<=h){
+  	let mid = Math.floor((l+h)/2);
+  	if(a[mid] == key){
+    	return mid;
+    }else if(key < a[mid]){
+    	return bf(l,mid-1,key);
+    }else{
+    	return bf(mid+1,h,key);
+    }
+  }else{
+  	return -1;
+  }
+}
+
+console.log(bf(0,a.length,401))
